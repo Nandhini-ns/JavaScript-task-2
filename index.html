@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset>
+    <h2>Register Form</h2>
+    <form id="form">
+        <input type="text" id="name" name="name" placeholder="User Name"><br><br>
+        <input type="email" id="email" name="Email" placeholder="User EmailId"><br><br>
+        <input type="password" id="pass" name="Password" placeholder="Password"><br><br>
+        <input type="text" id="job" name="job" placeholder="User Job"><br><br>
+        <input type="text" id="ex" name="Experience" placeholder="User Experience"><br><br>
+
+        <input type="button" value="Submit" id="btn" onclick="Submit()">
+        <input type="reset" value="reset">
+
+        </form>
+    </fieldset>
+
+    <div id="msg"></div>
+    <fieldset>
+        <h2>User List</h2>
+        <table border="2">
+            <tr>
+                <td class=".col">Name</td>
+                <td class=".col">Email</td>
+                <td class=".col">Password</td>
+                <td class=".col">Job</td>
+                <td class=".col">Experience</td>
+                
+            </tr>
+        </table>
+
+    </fieldset>
+    
+</body>
+<script src="script.js"></script>
+</html>
