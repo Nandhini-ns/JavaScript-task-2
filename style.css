@@ -9,18 +9,31 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #f7eded;
     padding: 20px;
 }
 
+
+/* body {
+    background-image: url('assest/image\ 1.avif'); /* or full path like 'images/bg.jpg' 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+} */
+
+
 /* Center the form and table */
 fieldset {
-    width: 50%;
+    width: 87%; /* 42%; *//*50% */
     margin: 20px auto;
     padding: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: 247px;
+    
 }
 
 h2 {
@@ -88,4 +101,31 @@ button {
 .deleteBtn {
     background-color: #ff6347;
     color: white;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+ 
+
+body {
+    height: 100vh;
+   /* display: flex;*/
+    justify-content: center;
+    align-items: center;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(to right, skyblue, lightgreen);
+}
+
+.imag{
+    height: 60%;
+     width: 480px;
+     border-radius: 10px;
+     box-shadow: 0 0 10px;"
 }

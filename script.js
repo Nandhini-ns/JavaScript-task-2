@@ -31,7 +31,9 @@ function retrieveDataFromLocalStorage(dataEntered){
 }*/
 
 
-let userList = JSON.parse(localStorage.getItem("users")) || [];
+
+
+/* let userList = JSON.parse(localStorage.getItem("users")) || [];
 
 function displayUsers() {
     const table = document.querySelector("table");
@@ -111,4 +113,124 @@ function deleteUser(index) {
 }
 
 // Load table when page loads
+window.onload = displayUsers; */
+
+
+
+let userList = JSON.parse(localStorage.getItem("users")) || [];
+let editIndex = -1;
+
+function displayUsers() {
+    const table = document.querySelector("table");
+    table.innerHTML = `
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Job</th>
+            <th>Experience</th>
+            <th>Actions</th>
+        </tr>
+    `;
+
+    userList.forEach((user, index) => {
+        let row = table.insertRow();
+        row.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.pass}</td>
+            <td>${user.job}</td>
+            <td>${user.ex}</td>
+            <td>
+                <button class="editBtn" onclick="editUser(${index})">Edit</button>
+                <button class="deleteBtn" onclick="deleteUser(${index})">Delete</button>
+            </td>
+        `;
+    });
+}
+
+function Submit() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const pass = document.getElementById("pass").value.trim();
+    const job = document.getElementById("job").value.trim();
+    const ex = document.getElementById("ex").value.trim();
+
+    // Clear all previous error messages
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passError").textContent = "";
+    document.getElementById("jobError").textContent = "";
+    document.getElementById("exError").textContent = "";
+
+    let isValid = true;
+
+    if (!name) {
+        document.getElementById("nameError").textContent = "Name is required";
+        isValid = false;
+    }
+    if (!email) {
+        document.getElementById("emailError").textContent = "Email is required";
+        isValid = false;
+    }
+    if (!pass) {
+        document.getElementById("passError").textContent = "Password is required";
+        isValid = false;
+    }
+    if (!job) {
+        document.getElementById("jobError").textContent = "Job is required";
+        isValid = false;
+    }
+    if (!ex) {
+        document.getElementById("exError").textContent = "Experience is required";
+        isValid = false;
+    }
+
+    if (!isValid) return;
+
+    if (editIndex >= 0) {
+        userList[editIndex] = { name, email, pass, job, ex };
+        editIndex = -1;
+        showMessage("User updated successfully!","blue");
+    } else {
+        userList.push({ name, email, pass, job, ex });
+        showMessage("User added successfully!","green");
+    }
+else{
+    window.localStorage('')
+}
+    localStorage.setItem("users", JSON.stringify(userList));
+    document.getElementById("form").reset();
+    displayUsers();
+}
+
+function editUser(index) {
+    const user = userList[index];
+    document.getElementById("name").value = user.name;
+    document.getElementById("email").value = user.email;
+    document.getElementById("pass").value = user.pass;
+    document.getElementById("job").value = user.job;
+    document.getElementById("ex").value = user.ex;
+    editIndex = index;
+}
+function deleteUser(index) {
+    if (confirm  ) {
+        userList.splice(index, 1);
+        localStorage.setItem("users", JSON.stringify(userList));
+        showMessage("User deleted successfully!", "red");
+        displayUsers();
+    }
+}
+
+
+function showMessage(msg, color) {
+    const msgDiv = document.getElementById("msg");
+    msgDiv.textContent = msg;
+    msgDiv.style.color = color;
+    msgDiv.style.margin = "10px 0";
+    setTimeout(() => {
+        msgDiv.textContent = "";
+    }, 3000);
+}
+
 window.onload = displayUsers;
