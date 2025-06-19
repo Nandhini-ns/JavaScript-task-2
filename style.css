@@ -1,131 +1,174 @@
 
-
-/* Common reset and font */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+   
     font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f7eded;
-    padding: 20px;
+    overflow: hidden;
 }
 
 
-/* body {
-    background-image: url('assest/image\ 1.avif'); /* or full path like 'images/bg.jpg' 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-} */
 
 
-/* Center the form and table */
+
 fieldset {
-    width: 87%; /* 42%; *//*50% */
-    margin: 20px auto;
+    width: 79%; 
     padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-left: 247px;
+   /* background: #ffffff;*/
+    /* border-radius: 10px; */
+
     
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: black;
 }
 
-/* Style the inputs */
+
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(143, 171, 181), rgb(108, 150, 202));
+
+}
+
+
+  .Gn{
+    width: 342px;
+    height: 100%;
+   /* border-radius: 10px;*/
+    margin-left:33px;
+ } 
+
+
+
+fieldset:hover {
+    transform: scale(1.01);
+}
+
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 12px;
+    margin: 8px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: border-color 0.2s;
 }
 
-/* Buttons */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #26a69a;
+}
+
+/* Button styles */
 input[type="button"],
 input[type="reset"] {
-    padding: 10px 20px;
-    margin: 10px 5px;
+    padding: 12px 25px;
+    margin-top: 15px;
+    margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
 #btn {
-    background-color: #28a745;
+    background-color: #29f030;
     color: white;
+}
+
+#btn:hover {
+    background-color: #00796b;
 }
 
 input[type="reset"] {
-    background-color: #dc3545;
+    background-color: #ef5350;
     color: white;
 }
 
-/* Table styling */
+input[type="reset"]:hover {
+    background-color: #c62828;
+}
+
+/* Error messages */
+.error {
+    color: rgb(229, 52, 52);
+    font-size: 17px;
+    margin-top: 3px;
+}
+
+/* Table styles */
 table {
-    width: 100%;
-    margin-top: 20px;
+    width: 95%;
+    max-width: 1000px;
+    margin: auto;
     border-collapse: collapse;
-    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
+th {
+    background-color: #26a69a;
+    color: white;
+    padding: 12px;
 }
 
-button {
-    padding: 5px 10px;
-    margin: 2px;
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+button.editBtn,
+button.deleteBtn {
+    padding: 6px 12px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .editBtn {
-    background-color: #007bff;
-    color: white;
+    background-color: #42a5f5;
+}
+
+.editBtn:hover {
+    background-color: #1e88e5;
 }
 
 .deleteBtn {
-    background-color: #ff6347;
-    color: white;
+    background-color: #ef5350;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-    display: block;
-    margin-top: 5px;
-}
- 
-
-body {
-    height: 100vh;
-   /* display: flex;*/
-    justify-content: center;
-    align-items: center;
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background: linear-gradient(to right, skyblue, lightgreen);
+.deleteBtn:hover {
+    background-color: #d32f2f;
 }
 
-.imag{
-    height: 60%;
-     width: 480px;
-     border-radius: 10px;
-     box-shadow: 0 0 10px;"
+
+#msg {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+
+
+

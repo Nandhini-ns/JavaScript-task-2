@@ -8,11 +8,12 @@
 </head>
 <body>
     <div style="display: flex;">
-        <div>
-            <img src="assest/image 0.jpg" alt="image" class="imag">
+        <div >
+        
+            <img  src="assest/image 1.avif" alt="image" class="Gn" >
         </div>
-        <div>
-    <fieldset style="background-color: rgb(66, 102, 140)">
+    <div>
+    <fieldset style="background-color: rgb(66, 102, 140) ;width: 314px;" >
     <h2>Register Form</h2>
     <form id="form">
         <input type="text" id="name" name="name" placeholder="User Name">
@@ -21,7 +22,7 @@
         <input type="email" id="email" name="Email" placeholder="User EmailId">
         <span id="emailError" class="error"></span><br>
 
-        <input type="password" id="pass" name="Password" placeholder="Password">
+        <input type="password" id="pass" name="Pass" placeholder="Password">
         <span id="passError" class="error"></span><br>
 
         <input type="text" id="job" name="job" placeholder="User Job">
@@ -31,189 +32,14 @@
         <span id="exError" class="error"></span><br>
 
         <input type="button" value="Submit" id="btn" onclick="Submit()">
-        <input type="reset" value="reset">
+        <input type="reset" value="Reset">
 
         </form>
     </fieldset>
     </div>
-     </div>
-    <div id="msg" style="text-align: center;"></div>
-   <!-- <fieldset style="background-color: rgb(153, 174, 193);">
-        <h2>User List</h2>
-        <table  border="2">
-            <tr>
-                <td class=".col">Name</td>
-                <td class=".col">Email</td>
-                <td class=".col">Password</td>
-                <td class=".col">Job</td>
-                <td class=".col">Experience</td>
-                
-            </tr>
-        </table>
-
-    </fieldset> -->
-   <!-- </div>
-   
-   </div> -->
-   <!--<div class="container">
-    <div class="left-section">
-        <img src="assest/image 0.jpg" alt="image">
     </div>
-    <div class="right-section">
-        <h2>Register Form</h2>
-        <form id="form">
-            <input type="text" id="name" placeholder="User Name">
-            <span id="nameError" class="error"></span><br>
-
-            <input type="email" id="email" placeholder="User EmailId">
-            <span id="emailError" class="error"></span><br>
-
-            <input type="password" id="pass" placeholder="Password">
-            <span id="passError" class="error"></span><br>
-
-            <input type="text" id="job" placeholder="User Job">
-            <span id="jobError" class="error"></span><br>
-
-            <input type="text" id="ex" placeholder="User Experience">
-            <span id="exError" class="error"></span><br>
-
-            <input type="button" value="Submit" id="btn" onclick="Submit()">
-            <input type="reset" value="Reset">
-        </form>
-        <div id="msg" style="text-align: center;"></div>
-    </div>
-</div>-->
+  
 </body>
 <script src="script.js"></script>
 </html>
 
-<!-- <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
- 
-    .container {
-      display: flex;
-      height: 100vh;
-    }
- 
-    .left-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #e6e9f0;
-    }
- 
-    .left-image img {
-      width: 80%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px gray;
-    }
- 
-    .right-form {
-      flex: 1.2;
-      padding: 30px;
-      background-color: #f3f6fb;
-      overflow-y: auto;
-    }
- 
-    fieldset {
-      background-color: rgb(66, 102, 140);
-      border-radius: 8px;
-      padding: 20px;
-      color: white;
-    }
- 
-    input {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
- 
-    .error {
-      color: red;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
- 
-    table {
-      width: 100%;
-      background-color: white;
-      color: black;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
- 
-    table td, table th {
-      border: 1px solid gray;
-      padding: 8px;
-      text-align: center;
-    }
- 
-    table th {
-      background-color: #c5d1e3;
-    }
- 
-    h2 {
-      text-align: center;
-      color: #ffffff;
-    }
-</style>
-</head>
-<body>
- 
-  <div class="container"> -->
-<!-- // Left Image Section 
-<div class="left-image">
-<img src="assest/image0.jpg" alt="User Image" />
-</div>
- 
-   // Right Form Section
-<div class="right-form">
-<fieldset>
-<h2>Register Form</h2>
-<form id="form">
-<input type="text" id="name" placeholder="User Name" />
-<span id="nameError" class="error"></span>
- 
-          <input type="email" id="email" placeholder="User Email" />
-<span id="emailError" class="error"></span>
- 
-          <input type="password" id="pass" placeholder="Password" />
-<span id="passError" class="error"></span>
- 
-          <input type="text" id="job" placeholder="User Job" />
-<span id="jobError" class="error"></span>
- 
-          <input type="text" id="ex" placeholder="User Experience" />
-<span id="exError" class="error"></span>
- 
-          <input type="button" value="Submit" onclick="Submit()" />
-<input type="reset" value="Reset" />
-</form>
-</fieldset>
- 
-      <fieldset style="margin-top: 20px;">
-<h2>User List</h2>
-<table id="userTable">
-<tr>
-<th>Name</th>
-<th>Email</th>
-<th>Password</th>
-<th>Job</th>
-<th>Experience</th>
-</tr>
-</table>
-</fieldset>
-</div>
-</div>
- 
-  <script src="script.js"></script>
-</body>
-</html> -->

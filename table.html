@@ -4,21 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
      <fieldset style="background-color: rgb(153, 174, 193);">
         <h2>User List</h2>
+        <p id="msg"></p>
         <table  border="2">
             <tr>
-                <td class=".col">Name</td>
-                <td class=".col">Email</td>
-                <td class=".col">Password</td>
-                <td class=".col">Job</td>
-                <td class=".col">Experience</td>
+                <td >Name</td>
+                <td >Email</td>
+                <td >Password</td>
+                <td >Job</td>
+                <td >Experience</td>
                 
             </tr>
         </table>
 
     </fieldset>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .action-btns button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User List</h2>
+  <p class="message" id="messageBox"></p>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    const tbody = document.querySelector('#userTable tbody');
+    const messageBox = document.getElementById('messageBox');
+
+    function showMessage(msg) {
+      messageBox.textContent = msg;
+      setTimeout(() => {
+        messageBox.textContent = '';
+      }, 2000);
+    }
+
+    function renderTable() {
+      tbody.innerHTML = '';
+      users.forEach((user, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.phone}</td>
+          <td class="action-btns">
+            <button onclick="editUser(${index})">Edit</button>
+            <button onclick="deleteUser(${index})">Delete</button>
+          </td> `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function deleteUser(index) {
+      if (confirm('Are you sure you want to delete this user?')) {
+        users.splice(index, 1);
+        localStorage.setItem('users', JSON.stringify(users));
+        renderTable();
+        showMessage("User deleted successfully!");
+      }
+    }
+
+    function editUser(index) {
+      const newName = prompt('Enter new name:', users[index].name);
+      const newEmail = prompt('Enter new email:', users[index].email);
+      const newPhone = prompt('Enter new phone:', users[index].phone);
+
+      if (newName && newEmail && newPhone) {
+        users[index] = { name: newName, email: newEmail, phone: newPhone };
+        localStorage.setItem('users', JSON.stringify(users));
+        renderTable();
+        showMessage("User updated successfully!");
+      }
+    }
+
+    renderTable();
+  </script>
+</body>
+</html>-->
