@@ -201,8 +201,9 @@ function displayUsers() {
       <td>${user.job}</td>
       <td>${user.ex}</td>
       <td>
-        <button onclick="editUser(${index})">Edit</button>
-        <button onclick="deleteUser(${index})">Delete</button>
+       <button style="background-color: Green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" onclick="editUser(${index})">Edit</button>
+      <button style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px;" onclick="deleteUser(${index})">Delete</button>
+
       </td>
     `;
   });
