@@ -245,7 +245,6 @@ function showMessage(msg, color) {
 window.onload = function () {
   const editUserData = JSON.parse(localStorage.getItem("editUser"));
   const index = localStorage.getItem("editIndex");
-
   if (editUserData && document.getElementById("form")) {
     document.getElementById("name").value = editUserData.name;
     document.getElementById("email").value = editUserData.email;
@@ -254,7 +253,6 @@ window.onload = function () {
     document.getElementById("ex").value = editUserData.ex;
     editIndex = parseInt(index);
   }
-
   if (document.querySelector("table")) {
     displayUsers();
   }
